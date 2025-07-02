@@ -23,6 +23,11 @@ const io = new SocketIOServer(server, {
   }
 })
 
+// Health check route
+app.get('/', (req, res) => {
+  res.json({ status: 'Backend is running', timestamp: new Date().toISOString() })
+})
+
 app.use(routes())
 
 sockets(io)
@@ -59,5 +64,5 @@ server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`)
 })
 
-
-export { io }
+export default app
+export { io, server }
