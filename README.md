@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![RoleDesk Logo](https://via.placeholder.com/150x50/1a1a1a/ffffff?text=RoleDesk)
+<img width="346" height="164" alt="image" src="https://github.com/user-attachments/assets/7c35ab03-2514-43f8-aef3-ecf9ec585f5f" />
 
 **Servidor backend de alta performance construido con Node.js, TypeScript y Socket.IO**
 
