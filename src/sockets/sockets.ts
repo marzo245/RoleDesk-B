@@ -242,6 +242,12 @@ export function sockets(io: Server) {
             emitToSocketIds(socketIds, 'receiveMessage', { uid, message })
         })
 
+        // Handler para expulsar usuarios desde la administración
+        socket.on('kickPlayer', ({ uid }) => {
+            // Aquí podrías validar que solo el owner puede expulsar si lo deseas
+            kickPlayer(uid, 'Expulsado por el administrador');
+        });
+
         // Resto de eventos: disconnect, etc...
 
         on('disconnect', Disconnect, ({ session }) => {
