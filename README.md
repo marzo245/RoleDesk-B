@@ -22,59 +22,7 @@
 
 RoleDesk Backend proporciona infraestructura robusta para espacios virtuales colaborativos con comunicación en tiempo real, gestión de sesiones distribuidas y algoritmos optimizados de proximidad para video chat automático.
 
-```mermaid
-graph TB
-    subgraph "Cliente"
-        C[React/JS Client]
-        WS[WebSocket Connection]
-        API[REST API Calls]
-    end
-    
-    subgraph "Load Balancer"
-        LB[Nginx/CloudFlare]
-    end
-    
-    subgraph "RoleDesk Backend"
-        direction TB
-        EXPRESS[Express Server]
-        SOCKETIO[Socket.IO Server]
-        SESSION[Session Manager]
-        USERS[User Manager]
-        PROXIMITY[Proximity Engine]
-        CACHE[Redis Cache]
-    end
-    
-    subgraph "Base de Datos"
-        SUPABASE[(Supabase PostgreSQL)]
-        AUTH[Supabase Auth]
-    end
-    
-    subgraph "Monitoreo"
-        METRICS[Performance Metrics]
-        LOGS[Winston Logging]
-        ALERTS[Error Alerting]
-    end
-    
-    C --> WS
-    C --> API
-    WS --> LB
-    API --> LB
-    LB --> EXPRESS
-    LB --> SOCKETIO
-    
-    EXPRESS --> SESSION
-    SOCKETIO --> SESSION
-    SESSION --> USERS
-    SESSION --> PROXIMITY
-    SESSION --> CACHE
-    
-    EXPRESS --> SUPABASE
-    SOCKETIO --> AUTH
-    
-    SESSION --> METRICS
-    EXPRESS --> LOGS
-    SOCKETIO --> ALERTS
-```
+<img width="832" height="987" alt="image" src="https://github.com/user-attachments/assets/493f81cb-55fe-4363-824f-f0b004428bc5" />
 
 ### 🎯 Características Técnicas Principales
 
